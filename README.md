@@ -1,6 +1,6 @@
 # Presenter
 
-<p align="center">
+<p align="left">
 <a href="https://travis-ci.org/KennedyTedesco/Presenter"><img src="https://img.shields.io/travis/KennedyTedesco/Presenter/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
 <a href="https://github.com/KennedyTedesco/Presenter/releases"><img src="https://img.shields.io/github/release/KennedyTedesco/Presenter.svg?style=flat-square" alt="Latest Version"></img></a>
