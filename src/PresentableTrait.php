@@ -2,6 +2,7 @@
 
 namespace KennedyTedesco\Presenter;
 
+use KennedyTedesco\Presenter\Interfaces\PresentableInterface;
 use KennedyTedesco\Presenter\Interfaces\PresenterInterface;
 use KennedyTedesco\Presenter\Exceptions\PresenterException;
 
@@ -22,14 +23,14 @@ trait PresentableTrait
             return $this->_presenter;
         }
 
-        if (method_exists($this, 'presenter')) {
-            $class = $this->presenter();
+        if ($this instanceof PresentableInterface) {
+            $presenter = new $this->presenter();
 
-            if (! in_array(PresenterInterface::class, class_implements($class))) {
+            if (! $presenter instanceof PresenterInterface) {
                 throw new PresenterException('You need to set a valid presenter class.');
             }
 
-            return $this->_presenter = new $class($this);
+            return $this->_presenter = new $presenter($this);
         }
 
         throw new PresenterException('You must set the presenter() method on ' . get_class($this));
