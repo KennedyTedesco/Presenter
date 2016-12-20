@@ -23,10 +23,10 @@ trait PresentableTrait
             return $this->_presenter;
         }
 
-        if ($this instanceof PresentableInterface)) {
+        if ($this instanceof PresentableInterface) {
             $presenter = new $this->presenter();
 
-            if (! $presenter instanceof PresenterInterface)) {
+            if (! $presenter instanceof PresenterInterface) {
                 throw new PresenterException('You need to set a valid presenter class.');
             }
 
