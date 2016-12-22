@@ -2,9 +2,9 @@
 
 namespace KennedyTedesco\Presenter;
 
-use KennedyTedesco\Presenter\Interfaces\PresentableInterface;
 use KennedyTedesco\Presenter\Interfaces\PresenterInterface;
 use KennedyTedesco\Presenter\Exceptions\PresenterException;
+use KennedyTedesco\Presenter\Interfaces\PresentableInterface;
 
 trait PresentableTrait
 {
