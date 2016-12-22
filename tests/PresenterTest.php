@@ -33,7 +33,7 @@ class PresenterTest extends TestCase
             'name' => 'Kennedy Tedesco Parreira',
         ]);
 
-        $this->assertEquals('Kennedy', $user->present()->isAdmin());
+        $this->assertEquals(true, $user->present()->isAdmin());
     }
 
     public function testPresenterInstance()
