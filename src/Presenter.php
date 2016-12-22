@@ -36,12 +36,8 @@ abstract class Presenter implements PresenterInterface
      */
     public function __get($property)
     {
-        $getter = 'get' . ucfirst($property);
-
         if (method_exists($this, $property)) {
             return $this->decorate($this->$property());
-        } elseif (method_exists($this, $getter)) {
-            return $this->decorate($this->$getter());
         }
 
         return $this->decorate($this->model->$property);
