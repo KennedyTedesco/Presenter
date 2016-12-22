@@ -11,7 +11,7 @@ class UserPresenter extends Presenter
      */
     public function firstName()
     {
-        return strtok($this->model->name, ' ');
+        return strtok($this->object->name, ' ');
     }
 
     /**
@@ -19,7 +19,7 @@ class UserPresenter extends Presenter
      */
     public function lastName()
     {
-        return array_slice(explode(' ', $this->model->name), -1)[0];
+        return array_slice(explode(' ', $this->object->name), -1)[0];
     }
 
     /**
@@ -27,6 +27,6 @@ class UserPresenter extends Presenter
      */
     public function fullName()
     {
-        return $this->model->name;
+        return $this->object->name;
     }
 }

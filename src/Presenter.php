@@ -9,23 +9,25 @@ use KennedyTedesco\Presenter\Interfaces\PresentableInterface;
 abstract class Presenter implements PresenterInterface
 {
     /**
+     * The object that is being decorated.
+     *
      * @var object
      */
-    protected $model;
+    protected $object;
 
     /**
      * Presenter constructor.
-     * @param $model
+     * @param $object
      *
      * @throws PresenterException
      */
-    public function __construct($model)
+    public function __construct($object)
     {
-        if (! is_object($model)) {
+        if (! is_object($object)) {
             throw new PresenterException("You must pass an object to the presenter " . get_class($this));
         }
 
-        $this->model = $model;
+        $this->object = $object;
     }
 
     /**
@@ -40,7 +42,7 @@ abstract class Presenter implements PresenterInterface
             return $this->decorate($this->$property());
         }
 
-        return $this->decorate($this->model->$property);
+        return $this->decorate($this->object->$property);
     }
 
     /**
