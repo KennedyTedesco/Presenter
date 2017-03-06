@@ -15,7 +15,6 @@ This is just a simple library that helps you to stop dirty up your views with lo
 **Requires:**
 
 - PHP 7.1+.
-- Laravel 5.3+
 
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
