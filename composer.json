@@ -11,20 +11,24 @@
     }
   ],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.1",
+    "illuminate/support": "5.3.*|5.4.*",
+    "illuminate/container": "5.3.*|5.4.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.7"
+    "phpunit/phpunit": "~6.0"
   },
   "autoload": {
     "psr-4": {
-      "KennedyTedesco\\Presenter\\": "src/"
-    }
+      "KennedyTedesco\\Presenter\\": "src/Presenter"
+    },
+    "files": ["src/helpers.php"]
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
-    }
+      "Tests\\": "tests"
+    },
+    "files": ["vendor/illuminate/support/helpers.php"]
   },
   "config": {
     "preferred-install": "dist",

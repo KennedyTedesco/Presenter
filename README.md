@@ -6,7 +6,29 @@
 <a href="https://github.com/KennedyTedesco/Presenter/releases"><img src="https://img.shields.io/github/release/KennedyTedesco/Presenter.svg?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
-This library is intend to helps you to stop dirty up your views with logic and presentation code.
+This is just a simple library that helps you to stop dirty up your views with logic and presentation code.
 
-> Coming soon. Please, don't use it yet.
+> See tests for examples. Docs soon.
 
+## Installation
+
+**Requires:**
+
+- PHP 7.1+.
+- Laravel 5.3+
+
+To get the latest version, simply require the project using [Composer](https://getcomposer.org):
+
+```bash
+$ composer require KennedyTedesco/Presenter
+```
+
+You may also manually update your require block and run `composer update`:
+
+```json
+{
+    "require": {
+        "KennedyTedesco/Presenter": "^1.0"
+    }
+}
+```

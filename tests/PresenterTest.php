@@ -1,61 +1,62 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace Tests;
 
-use Tests\Fixtures\Models\UserModel;
-use Tests\Fixtures\Models\ArticleModel;
-use Tests\Fixtures\Presenters\ArticlePresenter;
-use Tests\Fixtures\Presenters\PublishedArticlePresenter;
+use Tests\Fixtures\Model;
+use PHPUnit\Framework\TestCase;
+use Tests\Fixtures\UserPresenter;
+use Illuminate\Support\Collection;
 
 class PresenterTest extends TestCase
 {
-    public function testGetProperties()
+    public function testSingleModel()
     {
-        $user = new UserModel([
+        $user = new Model([
             'name' => 'Kennedy Tedesco Parreira',
         ]);
 
-        $this->assertEquals('Kennedy', $user->present()->firstName);
-        $this->assertEquals('Parreira', $user->present()->lastName);
+        $userPresenter = new UserPresenter($user);
 
-        $this->assertEquals('Kennedy', $user->present()->firstName());
-        $this->assertEquals('Parreira', $user->present()->lastName());
+        $this->assertEquals('Kennedy', $userPresenter->firstName);
+        $this->assertEquals('Parreira', $userPresenter->lastName);
 
-        $this->assertNull($user->present()->surName);
+        $this->assertEquals('Kennedy', $userPresenter->firstName());
+        $this->assertEquals('Parreira', $userPresenter->lastName());
+
+        $this->assertNull($userPresenter->surName);
+    }
+
+    public function testCollection()
+    {
+        $collection = new Collection([
+            new Model([
+                'name' => 'Kennedy Tedesco Parreira',
+            ]),
+            new Model([
+                'name' => 'Foo Bar',
+            ])
+        ]);
+
+        $users = presenter($collection, new UserPresenter);
+
+        $this->assertEquals('Kennedy', $users->first()->firstName);
+        $this->assertEquals('Parreira', $users->first()->lastName);
+
+        $this->assertEquals('Foo', $users->last()->firstName);
+        $this->assertEquals('Bar', $users->last()->lastName);
     }
 
     /**
-     * @expectedException \KennedyTedesco\Presenter\Exceptions\PresenterException
+     * @expectedException \BadMethodCallException
      */
     public function testCallInvalidMethod()
     {
-        $user = new UserModel([
+        $user = new Model([
             'name' => 'Kennedy Tedesco Parreira',
         ]);
 
-        $this->assertEquals(true, $user->present()->isAdmin());
-    }
+        $userPresenter = new UserPresenter($user);
 
-    public function testPresenterInstance()
-    {
-        $article = new ArticleModel([
-            'title' => 'PHP 7.1 features',
-            'published' => false,
-        ]);
-
-        $this->assertEquals('PHP 7.1 features', $article->present()->title);
-        $this->assertEquals('2016-12-18', $article->present()->createdAt);
-
-        $this->assertInstanceOf(ArticlePresenter::class, $article->present());
-        $this->assertNull($article->present()->countViews);
-
-        // The 'published' set to true will force to use another presenter type
-        $article = new ArticleModel([
-            'title' => 'PHP 7.1 features',
-            'published' => true,
-        ]);
-
-        $this->assertInstanceOf(PublishedArticlePresenter::class, $article->present());
-        $this->assertEquals(100, $article->present()->countViews);
+        $this->assertEquals(true, $userPresenter->isAdmin());
     }
 }

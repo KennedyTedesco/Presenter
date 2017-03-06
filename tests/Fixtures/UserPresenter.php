@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Fixtures\Presenters;
+namespace Tests\Fixtures;
 
 use KennedyTedesco\Presenter\Presenter;
 

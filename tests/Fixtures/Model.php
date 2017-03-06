@@ -2,7 +2,7 @@
 
 namespace Tests\Fixtures;
 
-abstract class AbstractModel
+class Model
 {
     /**
      * @var array
