@@ -19,7 +19,7 @@ This is just a simple library that helps you to stop dirty up your views with lo
 To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
-$ composer require KennedyTedesco/Presenter
+$ composer require kennedytedesco/presenter
 ```
 
 You may also manually update your require block and run `composer update`:
@@ -27,7 +27,7 @@ You may also manually update your require block and run `composer update`:
 ```json
 {
     "require": {
-        "KennedyTedesco/Presenter": "^1.0"
+        "kennedytedesco/presenter": "^1.0"
     }
 }
 ```
