@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "KennedyTedesco\\Presenter\\": "src/Presenter"
+      "KennedyTedesco\\Presenter\\": "src"
     },
     "files": ["src/helpers.php"]
   },
