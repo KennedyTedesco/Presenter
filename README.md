@@ -1,9 +1,9 @@
 # Presenter
 
 <p align="left">
-<a href="https://travis-ci.org/KennedyTedesco/Presenter"><img src="https://img.shields.io/travis/KennedyTedesco/Presenter/master.svg?style=flat-square" alt="Build Status"></img></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/KennedyTedesco/Presenter/releases"><img src="https://img.shields.io/github/release/KennedyTedesco/Presenter.svg?style=flat-square" alt="Latest Version"></img></a>
+<a href="https://travis-ci.org/KennedyTedesco/Presenter"><img src="https://travis-ci.org/KennedyTedesco/Presenter.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/KennedyTedesco/Presenter"><img src="https://poser.pugx.org/KennedyTedesco/Presenter/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/KennedyTedesco/Presenter"><img src="https://poser.pugx.org/KennedyTedesco/Presenter/license.svg" alt="License"></a>
 </p>
 
 This is just a simple library that helps you to stop dirty up your views with logic and presentation code.
